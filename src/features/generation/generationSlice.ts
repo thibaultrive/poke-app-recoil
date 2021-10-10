@@ -8,7 +8,7 @@ export interface Generation {
     index: number;
 }
 
-interface GeenrationsResponse {
+interface GenerationsResponse {
     results: Generation[];
     count: number;
 }
@@ -34,7 +34,7 @@ export const getGenerations = createAsyncThunk(
     'generations/fetchList',
     async () => {
         const response = await fetch(apiUrl + "/generation", {});
-        return await response.json() as GeenrationsResponse;
+        return await response.json() as GenerationsResponse;
     }
 );
 

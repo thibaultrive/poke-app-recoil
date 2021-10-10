@@ -1,0 +1,5 @@
+.list {
+    display: inline-block;
+    margin-left: 50px;
+    vertical-align: sub;
+}

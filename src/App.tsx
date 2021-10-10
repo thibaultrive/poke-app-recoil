@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
 import {Generation} from "./features/generation/Generation";
+import {Species} from "./features/species/Species";
+import {Versions} from "./features/versions/Versions";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Generation />
+          <div><Generation/><Versions/></div>
+        <Species/>
       </header>
     </div>
   );

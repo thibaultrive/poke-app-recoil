@@ -1,9 +1,12 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import generationReducer from '../features/generation/generationSlice';
+import speciesReducer from '../features/species/speciesSlice';
+
 
 export const store = configureStore({
   reducer: {
     generation: generationReducer,
+    species: speciesReducer,
   },
 });
 
