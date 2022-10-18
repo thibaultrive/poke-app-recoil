@@ -3,10 +3,11 @@ import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {generationsSelector, getGenerations, selectGeneration} from "./generationSlice";
 import styles from "./generation.module.css";
+import {AppDispatch} from "../../app/store";
 
 export function Generation() {
 
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
     const { selectedGeneration, generations } = useSelector(generationsSelector);
 
     const handleChange = (newGeneration: SelectChangeEvent<number>) => {

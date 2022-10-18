@@ -4,10 +4,11 @@ import {useDispatch, useSelector} from "react-redux";
 import {generationsSelector} from "../generation/generationSlice";
 import styles from "./species.module.css";
 import {getSpecies, speciesSelector} from "./speciesSlice";
+import {AppDispatch} from "../../app/store";
 
 export function Species() {
 
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
     const { selectedGeneration } = useSelector(generationsSelector);
     const { species } = useSelector(speciesSelector);
 
