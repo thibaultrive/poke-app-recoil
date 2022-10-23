@@ -1,4 +1,3 @@
-import React from 'react';
 import './App.css';
 import {Generation} from "./features/generation/Generation";
 import {Species} from "./features/species/Species";
