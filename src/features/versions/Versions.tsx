@@ -1,11 +1,11 @@
 import {Chip} from '@mui/material';
-import {useSelector} from "react-redux";
 import styles from "./versions.module.css";
-import {speciesSelector} from "../species/speciesSlice";
+import {useRecoilValue} from "recoil";
+import {versionsState} from "../species/speciesStore";
 
 export function Versions() {
 
-    const { versions } = useSelector(speciesSelector);
+    const versions = useRecoilValue(versionsState);
 
     return(
       <div className={styles.list}>

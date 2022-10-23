@@ -1,23 +1,16 @@
 import {InputLabel, MenuItem, FormControl, Select, SelectChangeEvent} from '@mui/material';
-import {useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {generationsSelector, getGenerations, selectGeneration} from "./generationSlice";
 import styles from "./generation.module.css";
-import {AppDispatch} from "../../app/store";
+import {useRecoilState, useRecoilValue} from "recoil";
+import {generationsState, selectedGenerationState} from "./generationStore";
 
 export function Generation() {
 
-    const dispatch = useDispatch<AppDispatch>();
-    const { selectedGeneration, generations } = useSelector(generationsSelector);
+    const generations = useRecoilValue(generationsState);
+    const [selectedGeneration, setSelectedGeneration] = useRecoilState(selectedGenerationState);
 
     const handleChange = (newGeneration: SelectChangeEvent<number>) => {
-        dispatch(selectGeneration(newGeneration.target.value as number));
+        setSelectedGeneration(newGeneration.target.value as number);
     };
-
-    useEffect(() => {
-        console.log("loading generations...");
-            dispatch(getGenerations());
-    }, [dispatch]);
 
     return(
       <div className={styles.select}>
